@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience & Explore International Village Mall - Your one-stop destination for mall information, directory, deals, and more!">
+  <meta name="keywords" content="Experience, Explore, International Village Mall, Mall Info, Directory, Deals">
+  <meta name="author" content="International Village Mall">
+  <meta property="og:title" content="Experience & Explore International Village Mall">
+  <meta property="og:description" content="Explore the best deals, mall information, and events at International Village Mall!">
+  <meta property="og:image" content="images/logo.png"> <!-- Add logo/image for social media preview -->
+  <meta property="og:url" content="https://www.yoursite.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+  <title>International Village Mall</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+  <style>
+    .navbar-brand img {
+      height: 40px;
+    }
+    .mall-hours {
+      background-color: #f8f9fa;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.5rem 0;
+      border-top: 1px solid #dee2e6;
+    }
+    .video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+  }
+
+  .video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 15px;
+    max-width: 800px;
+  }
+
+  .video-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Akaya Kanadaka', cursive;
+  }
+
+  .store-boxes {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 15px;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    }
+
+    /* Hiding the scrollbar */
+    .store-boxes::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    .store-box {
+      min-width: 200px;
+      padding: 15px;
+      border: 2px solid black;
+      background-color: white;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .store-box:nth-child(odd) {
+      font-family: 'Akaya Kanadaka', cursive;
+    }
+
+    .store-box:nth-child(even) {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .store-box h6 {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .store-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .store-box {
+        min-width: 150px;
+      }
+    }
+
+     /* Contact Section Styling */
+    .contact-info-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #efefef;
+    }
+
+    .contact-info-card .card-body {
+      flex: 1;
+      padding-left: 70px;
+    }
+
+    .contact-info-card img {
+      width: 100%;
+      height: auto;
+      max-width: 350px; /* Set max width for image */
+      object-fit: cover;
+      border-radius: 8px;
+      padding-right: 70px;
+    }
+
+    .contact-box h3 {
+      font-size: 2.8rem;
+      margin-bottom: 45px;
+    }
+
+    .contact-info-card p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .contact-info-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-info-card img {
+        margin-top: 20px;
+        max-width: 80%; /* Adjust image size on smaller screens */
+      }
+    }
+
+    hr.n1 {
+      border-top: 2px solid black;
+      margin: 90px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Mall Logo"> <!-- Replace 'logo.png' with your logo file -->
+      </a>
+
+      <!-- Toggler button for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mall Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Directory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News & Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mall Hours -->
+  <div class="mall-hours">
+    <div class="container">
+      <span>Mall Hours: 10:00 AM - 10:00 PM</span>
+    </div>
+  </div>
+
+<!-- Full-Screen Video Section -->
+<div class="video-section">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="images/main.mp4" type="video/mp4"> <!-- Replace with your video file -->
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="video-content">
+      <h1 class="video-title">Explore & Experiences International Village Mall</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Store Boxes Section -->
+<div class="container my-5 mt-5">
+  <h2 class="text-center mb-4">Explore Our Stores</h2>
+  <div class="store-boxes">
+    <div class="store-box">
+      <h6>Beauty & Salon</h6>
+      <p>1065</p>
+    </div>
+    <div class="store-box">
+      <h6>Cocoa Tanning</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Studio 73</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Mint Smile Bar</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>K2 Hair Cut Studio</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Vanity Company</h6>
+      <p>2F</p>
+    </div>
+    <div class="store-box">
+      <h6>Bossa Nova Salon & Spa</h6>
+      <p>2F</p>
+    </div>
+    <div class="store-box">
+      <h6>Chura Hair Salon</h6>
+      <p>2F</p>
+    </div>
+    <div class="store-box">
+      <h6>Cell Universe</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Fast Cell Repair</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Zee Mobile</h6>
+      <p>2F</p>
+    </div>
+    <div class="store-box">
+      <h6>Rain City Games</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>Memoir Studio</h6>
+      <p>2F</p>
+    </div>
+    <div class="store-box">
+      <h6>Litcity Wholesale Ltd</h6>
+      <p>1F</p>
+    </div>
+    <div class="store-box">
+      <h6>McDonald's Restaurant</h6>
+      <p>1F</p>
+    </div>
+  </div>
+</div>
+
+<hr class="n1">
+
+<!-- Food and Restaurant Section -->
+<div class="container my-5 mt-5">
+  <h2 class="text-center mb-4">Food and Restaurants</h2>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Starbucks Card -->
+    <div class="col">
+      <div class="card">
+        <img src="images/starbucks.jpg" class="card-img-top" alt="Starbucks"> <!-- Replace with actual image -->
+        <div class="card-body">
+          <h5 class="card-title text-center">Starbucks</h5>
+        </div>
+      </div>
+    </div>
+    
+    <!-- McDonald's Card -->
+    <div class="col">
+      <div class="card">
+        <img src="images/mcDonald.jpg" class="card-img-top" alt="McDonald's Restaurant"> <!-- Replace with actual image -->
+        <div class="card-body">
+          <h5 class="card-title text-center">McDonald's Restaurant</h5>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Congee Noodle Delight Card -->
+    <div class="col">
+      <div class="card">
+        <img src="images/1021_Congee_Noodle_Delight.jpg" class="card-img-top" alt="Congee Noodle Delight"> <!-- Replace with actual image -->
+        <div class="card-body">
+          <h5 class="card-title text-center">Congee Noodle Delight</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="n1">
+
+<!-- Leasing Inquiry Section -->
+<div class="container my-5" style="margin-top: 90px;">
+  <h2 class="text-center mb-4">Leasing Inquiry</h2>
+  
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Premises Available for Lease</h5>
+          <p class="card-text text-center mb-4">
+            Check our unit availability page to pick your desired space(s).
+          </p>
+          <p class="card-text text-center">
+            Feel free to call us at <strong>604-646-1081</strong> or email <strong><a href="mailto:ivmleasing@gmail.com">ivmleasing@gmail.com</a></strong> for details.
+          </p>
+          <p class="card-text text-center mt-4">
+            Any inquiries are welcomed! We will try our best to accommodate your needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="n1">
+
+<!-- Contact Information Section -->
+<div class="container mt-5">
+  <div class="contact-info-card">
+    <div class="card-body">
+      <div class="contact-box">
+        <h3>Contact Information</h3>
+        <p><strong>Management Office:</strong> (604) 647-1137</p>
+        <p><strong>Security Office and Lost & Found:</strong> (604) 647-1127</p>
+        <p><strong>Parking Management, Monthly Pass and Event Parking:</strong></p>
+        <p>Impark (604) 331-7288 / (604) 681-7311</p>
+        <p><strong>Address:</strong> 88 West Pender Street</p>
+        <p>
+          Vancouver BC Canada
+          V6B 6N9
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <img src="images/banner_Telus_WiFi_small.jpg" alt="Contact Image"> <!-- Replace with actual image -->
+    </div>
+    
+  </div>
+</div>
+
+<!-- Copyright & Terms Section -->
+<div class="container text-center my-4">
+  <p>© 2024 International Village Mall | All Rights Reserved | <a href="#">Privacy & Terms</a></p>
+</div>
+
+<div class="container text-center my-4">
+  <p>Developed by: <a href="https://shreeharitech.github.io/ShreeHariTech/">Shree Hari Tech</a></p>
+</div>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
